@@ -17,20 +17,34 @@ document.querySelectorAll(".menu").forEach((menu) =>
 const hamMenu = document.querySelector(".hamburger-menu");
 const closeMenu = document.querySelector(".close-menu");
 const nav = document.querySelector("nav");
+// hamMenu.addEventListener("click", displayNav);
+// closeMenu.addEventListener('click', displayNav);
 
-hamMenu.addEventListener("click", displayNav);
-closeMenu.addEventListener('click', displayNav);
+// function displayNav() {
+// 	if (nav.classList.contains("active-nav")) {
+// 		hamMenu.style.display = "block";
+// 		closeMenu.style.display = "none";
+// 		nav.style.display = "none";
+// 		nav.classList.remove("active-nav");
+// 	} else {
+// 		hamMenu.style.display = "none";
+// 		closeMenu.style.display = "block";
+// 		nav.style.display = "flex";
+// 		nav.classList.add("active-nav");
+// 	}
+// }
 
-function displayNav() {
-	if (nav.classList.contains("active-nav")) {
-		hamMenu.style.display = "block";
-		closeMenu.style.display = "none";
-		nav.style.display = "none";
-		nav.classList.remove("active-nav");
-	} else {
-		hamMenu.style.display = "none";
-		closeMenu.style.display = "block";
-		nav.style.display = "flex";
-		nav.classList.add("active-nav");
-	}
-}
+hamMenu.addEventListener("click", () => {
+	nav.classList.add("active-nav");
+	closeMenu.classList.add("menu-show");
+	hamMenu.classList.add("menu-hide");
+	closeMenu.classList.remove("menu-hide");
+	hamMenu.classList.remove("menu-show");
+});
+closeMenu.addEventListener("click", () => {
+	nav.classList.remove("active-nav");
+	closeMenu.classList.add("menu-hide");
+	hamMenu.classList.add("menu-show");
+	closeMenu.classList.remove("menu-show");
+	hamMenu.classList.remove("menu-hide");
+});
