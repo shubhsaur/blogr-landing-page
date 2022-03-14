@@ -159,6 +159,20 @@ nav {
 	cursor: pointer;
 }
 
+/* ACTIVE NAV */
+
+nav.active-nav{
+	display: flex;
+}
+
+.menu-show{
+	display: block;
+}
+
+.menu-hide{
+	display: none;
+}
+
 .sub-menu {
 	display: none;
 	animation: moveSubMenu 450ms ease-in-out forwards;
